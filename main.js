@@ -23,46 +23,69 @@ By Dion Hobdy
 `);
 
 let x;
-let ifState = () => {
+
+// Make ifState async so we can await each option when needed
+let ifState = async () => {
     if (x == 0) {
-        newProject();
+        await newProject();
     } else if (x == 1) {
-        currentProject();
+        await currentProject();
     } else if (x == 2) {
-        addProject();
+        await addProject();
     } else if (x == 3) {
-        timer();
+        await timer();
     }
 }
 
-let menu = () => {
-    (async () => {
+// main menu loop - keeps showing the menu until the user explicitly chooses to exit
+let menu = async () => {
+    let shouldExit = false;
+    while (!shouldExit) {
         const response = await prompts({
-            // set prompt type to select, which enables the user to select options.
             type: 'select',
             name: 'value',
-            message: 'select option',
-            // display function names and descript functions that are not named after difficulty setting.
+            message: 'Select option',
             choices: [
                 { title: 'New Project', description: 'Randomly outputs a project from the master list.'},
                 { title: 'Current Project', description: 'Displays the current project and set the status of the project.'},
                 { title: 'Add Project', description: 'Enables the user to add a project to the master list.'},
-                { title: 'Timer Mode', description: 'Sets a timer for the user based on time options.'}
+                { title: 'Timer Mode', description: 'Sets a timer for the user based on time options.'},
+                { title: 'Exit', description: 'Close the application.'}
             ],
-            // set the cursor automatically to the first function. whichi is indexed at 0.
             initial: 0
         });
-        // print the prompt as response variable.
-        console.log(response);
-        // create a obj that hold a key/value pair for each option.
+
+        // If user cancels (Ctrl+C or Esc), prompts returns undefined; treat that as Exit
+        if (!response || typeof response.value === 'undefined') {
+            shouldExit = true;
+            break;
+        }
+
         x = response.value;
-        ifState();
-    })();
+
+        // If the user selected the Exit option (which we placed last), break the loop
+        if (x === 4) {
+            shouldExit = true;
+            break;
+        }
+
+        // Call the selected function and wait for it to finish if it returns a Promise
+        try {
+            await ifState();
+        } catch (err) {
+            console.error('Error while executing option:', err);
+        }
+
+        console.log('\nReturning to main menu...');
+    }
+
+    console.log('Exiting Project Bot. Goodbye!');
+    say.speak('Exiting Project Bot. Goodbye!');
+    process.exit(0);
 }
 
 console.log('Welcome to Project Bot! Please select an option.');
-say.speak('Welcome to Project Bot! Please select an option.');
+say.speak('Welcome to Project Bot!');
 
-
-// return menu function to initialize the application.
+// start the menu loop
 menu();

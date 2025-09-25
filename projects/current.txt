@@ -1,0 +1,1 @@
+No project confirmed. Select 'New Project' to generate a project.

@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "prompts": "^2.4.2",
+    "terminal-text-color": "^0.0.7"
+  }
+}

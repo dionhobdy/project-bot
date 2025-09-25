@@ -3,9 +3,11 @@
 // external module calls
 const fs = require('fs');
 const prompts = require('prompts');
+const say = require('say');
 
 // the addProject function allows the user to add a new project to projects.txt
 let addProject = async () => {
+    say.speak('Please enter the new project details after the prompt.');
     const response = await prompts({ 
         type: 'text',
         name: 'value',
@@ -26,6 +28,7 @@ let addProject = async () => {
 
 // the currentProject function reads and displays the current project from current.txt
 let currentProject = () => {
+    say.speak('Fetching the current project details.');
     fs.readFile('./projects/current.txt', 'utf8', (err, data) => {
         if (err) {
             console.error('Error reading current.txt:', err);
@@ -41,6 +44,7 @@ let currentProject = () => {
 
 // the newProject function reads a random project from projects.txt, confirms with the user, and updates current.txt
 let newProject = async () => {
+    say.speak('Generating a new project for you.');
     // Read all projects
     fs.readFile('./projects/projects.txt', 'utf8', async (err, data) => {
         if (err) {

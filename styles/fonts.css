@@ -1,0 +1,91 @@
+@media (max-width: 600px) {
+    .instruction { font-size: 1.2rem; }
+
+    .subtitle { font-size: 1.5rem; }
+
+    .title1 { font-size: 3rem; }
+
+    .title2 { font-size: 3.5rem; }
+}
+
+.instruction {
+    animation: introColor 2s ease-in-out infinite;
+    color:#8A817C;
+    display: inline-block;
+    font-family: "Chiron Hei HK", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-size: 1.5rem;
+    font-style: normal;
+    margin-top: 5rem;
+    opacity: .5;
+}
+
+@keyframes introColor {
+    0% { color: #8A817C; }
+    50% { color: #F4F3EE; }
+    100% { color: #8A817C; }
+}
+
+.map {
+    color:#8A817C;
+    display: inline-block;
+    font-family: "Chiron Hei HK", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-size: 1.25rem;
+    font-style: normal;
+    opacity: .5;
+}
+
+.rating-label {
+    color:#8A817C;
+    display: inline-block;
+    font-family: "Chiron Hei HK", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-size: 1.5rem;
+    font-style: normal;
+}
+
+.rating-option {
+    font-family: "Chiron Hei HK", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-size: 1.25rem;
+    font-style: normal;
+}
+
+.subtitle {
+    color:#8A817C;
+    display: inline-block;
+    font-family: "Chiron Hei HK", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-size: 2rem;
+    font-style: normal;
+}
+
+.title1 {
+    color:#F4F3EE;
+    display: inline-block;
+    filter: drop-shadow(2px 3px 2px rgba(0, 0, 0, 0.4));
+    font-family: "Chiron Hei HK", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-size: 4rem;
+    font-style: normal;
+
+}
+
+.title2 {
+    color:#463F3A;
+    display: inline-block;
+    filter: drop-shadow(2px 2px 1px rgba(0, 0, 0, 0.4));
+    font-family: "Chiron Hei HK", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-size: 4.5rem;
+    font-style: normal;
+
+}

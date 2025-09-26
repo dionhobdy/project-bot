@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+    
+    <link rel="stylesheet" href="../styles/boba-back.css">
+    <link rel="stylesheet" href="../styles/buttons.css">
+    <link rel="stylesheet" href="../styles/fonts.css">
+    <link rel="stylesheet" href="../styles/gen.css">
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/titlebar.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chiron+Hei+HK:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="titlebar">
+        <div class="titlebarHeader">珍珠奶茶 BOT</div>
+        <div class="control-container">
+            <img class="win-control" src="../assets/minimize.svg" alt="Minimize">
+            <img class="win-control" src="../assets/maximize.svg" alt="Maximize" style="width: 25px; height: 25px; margin-bottom: 2px;">
+            <img class="win-control" src="../assets/close.svg" alt="Close">
+        </div>
+    </div>
+    <div class="container">
+        <div class="gen-container">
+            <div class="gen-header"><b>Milk Tea(s):</b></div>
+            <div id="gen-1" class="gen-content"></div>
+            <div id="gen-2" class="gen-content"></div>
+            <br>
+            <div class="gen-header"><b>Additive(s):</b></div>
+            <div id="gen-3" class="gen-content"></div>
+            <div id="gen-4" class="gen-content"></div>
+        </div>
+        <br>
+        <div style="display:flex; gap:1rem; align-items:center;">
+            <label for="rating-select" class="rating-label">RATING:</label>
+            <select id="rating-select" class="rating-select">
+                <center>
+                    <option value="1" class="rating-option">1 STAR</option>
+                    <option value="2" class="rating-option">2 STAR</option>
+                    <option value="3" class="rating-option">3 STAR</option>
+                    <option value="4" class="rating-option">4 STAR</option>
+                    <option value="5" class="rating-option">5 STAR</option>
+                </center>
+            </select>
+        </div>
+        <br><br>
+        <div class="button-container">
+            <button id="load-saved" class="button">LOAD</button>
+            <div id="retry-saved" class="button">RETRY</div>
+            <div id="back-saved" class="button">BACK</div>
+        </div>
+        <br>
+    </div>
+    <div style="position: absolute; margin-top: 2rem; right: 0;">
+            <div class="boba-container">
+                <div class="boba-back" style="top: 0; right: 0;"></div>
+                <div class="boba-back" style="top: 8rem; right: 8rem;"></div>
+                <div class="boba-back" style="top: 8rem; right: 0;"></div>
+                <div class="boba-back" style="top: 16rem; right: 16rem;"></div>
+                <div class="boba-back" style="top: 16rem; right: 8rem;"></div>
+                <div class="boba-back" style="top: 16rem; right: 0;"></div>
+            </div>
+    </div>
+    <script src="../scripts/saved.js"></script>
+    <script src="../scripts/window-controls.js"></script>
+    <script src="../scripts/navigation.js"></script>
+    <!-- Temporary debug helper: logs the element under the pointer and highlights it briefly. Remove after debugging. -->
+    <script>
+     /*   document.addEventListener('pointerdown', function(e){
+            try {
+                const el = document.elementFromPoint(e.clientX, e.clientY);
+                console.log('[DEBUG CLICK SAVED] coords:', e.clientX, e.clientY, 'event.target:', e.target, 'elementFromPoint:', el);
+                if (el && el.style) {
+                    // highlight the element under pointer so user can see what's intercepting clicks
+                    const prevOutline = el.style.outline;
+                    el.style.outline = '3px solid rgba(255,0,0,0.85)';
+                    setTimeout(() => { el.style.outline = prevOutline; }, 2500);
+                }
+            } catch (err) {
+                console.error('Debug click error:', err);
+            }
+        }, true); */
+    </script>
+</body>

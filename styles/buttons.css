@@ -1,0 +1,49 @@
+@media (max-width: 600px) {
+    .button {
+        font-size: 1.5rem;
+        padding: 0.4rem 0.8rem;
+    }
+
+    .button-container {
+        gap: 0.5rem;
+    }
+}
+
+.button {
+    border: solid .5rem #8A817C;
+    display: inline-block;
+    background-color: #BCB8B1;
+    color: #F4F3EE;
+    padding: 0.5rem 1rem;
+    font-family: "Chiron Hei HK", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-size: 2rem;
+    font-style: normal;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s, border 0.3s;
+    cursor: pointer;
+    /* ensure buttons are above decorative elements and can receive clicks */
+    position: relative;
+    z-index: 20;
+    pointer-events: auto;
+}
+
+.button:hover {
+    border: solid .5rem #463F3A;
+    background-color: #E0AFA0;
+    color: #463F3A;
+}
+
+.button-container {
+    display: flex;
+    gap: 1rem;
+}
+
+/* Ensure the whole button container is above decorative elements */
+.button-container {
+    position: relative;
+    z-index: 1000;
+}

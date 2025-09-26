@@ -1,0 +1,85 @@
+::selection {
+    background: #E0AFA0; /* Highlight background color */
+    color: #463F3A;      /* Text color */
+}
+
+body {
+    background-color: #BCB8B1;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin-top: -1rem;
+}
+
+/* Larger custom dropdown arrow for select elements */
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: 0.6rem 0.8rem; /* slightly larger padding for bigger font */
+    font-size: 1.35rem; /* increased font size for dropdown */
+    font-family: "Chiron Hei HK", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+    color: #F4F3EE; /* match button text color */
+    background-color: #BCB8B1;
+    border: 2px solid #8A817C;
+    border-radius: 4px;
+    cursor: pointer;
+    /* removed custom arrow (no background image) */
+    background-image: none;
+    /* center text inside select */
+    text-align: center;
+    text-align-last: center; /* for many browsers */
+    transition: background-color 0.3s, color 0.3s, border 0.3s;
+}
+ 
+/* Ensure the rating-select variant uses the larger arrow and spacing too */
+.rating-select {
+    padding: 0.6rem 0.8rem;
+    text-align: center;
+    text-align-last: center;
+    font-size: 1.35rem;
+    font-family: "Chiron Hei HK", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+    color: #F4F3EE;
+    background-image: none;
+    transition: background-color 0.3s, color 0.3s, border 0.3s;
+}
+
+/* Match .button hover behavior for selects */
+select:hover,
+.rating-select:hover {
+    border: solid .5rem #463F3A;
+    background-color: #E0AFA0;
+    color: #463F3A;
+}
+
+/* Ensure option text is centered in the dropdown list */
+select option {
+    text-align: center;
+}
+
+/* small tweak for focus */
+select:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(224,175,160,0.25);
+}

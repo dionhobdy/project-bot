@@ -1,0 +1,95 @@
+.gen-container {
+    width: 15rem;
+}
+
+
+.gen-content {
+    border: 2px solid transparent;
+    color:#8A817C;
+    cursor: pointer;
+    font-family: "Chiron Hei HK", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-size: 1.75rem;
+    font-style: normal;
+    opacity: .75;
+    transition: color 0.2s ease;
+}
+
+.gen-content.selected {
+    color:#463F3A;
+    cursor: pointer;
+    opacity: 1;
+}
+
+.gen-content:hover {
+    opacity: 1;
+}
+
+.gen-header {
+    color:#F4F3EE;
+    font-family: "Chiron Hei HK", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-size: 2rem;
+    font-style: normal;
+}
+
+.rating-select {
+    font-family: "Chiron Hei HK", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-size: 1.25rem;
+    font-style: normal;
+    background-color: #BCB8B1;
+    color: #463F3A;
+    border: solid .5rem #8A817C;
+    border-radius: 5px;
+    padding: 0.25rem 0.5rem;
+    cursor: pointer;
+    /* ensure the select is above decorative elements and can receive clicks */
+    position: relative;
+    z-index: 20;
+}
+
+.save {
+    width: 4.5rem;
+    height: 4.5rem;
+    cursor: pointer;
+    display: inline-block;
+    opacity: .5;
+    position: relative;
+    z-index: 20;
+    pointer-events: auto;
+}
+
+.save:hover {
+    opacity: .75;
+}
+
+.star {
+    width: 5rem;
+    height: 5rem;
+    cursor: pointer;
+    display: inline-block;
+    opacity: .5;
+    /* ensure stars are on top of decorative elements and can receive pointer events */
+    position: relative;
+    z-index: 10;
+}
+
+.star.filled {
+    content: url('../assets/star-full.png');
+    filter: drop-shadow(0 3px 2px #323232);
+    opacity: 1;
+}
+
+.star:hover {
+    content: url('../assets/star-full.png');
+    opacity: 1;
+}
+
+.star-container {
+    display: flex;
+    gap: 1rem;
+}

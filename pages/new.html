@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+    
+    <link rel="stylesheet" href="../styles/boba-back.css">
+    <link rel="stylesheet" href="../styles/buttons.css">
+    <link rel="stylesheet" href="../styles/fonts.css">
+    <link rel="stylesheet" href="../styles/gen.css">
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/titlebar.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chiron+Hei+HK:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="titlebar">
+        <div class="titlebarHeader">珍珠奶茶 BOT</div>
+        <div class="control-container">
+            <img class="win-control" src="../assets/minimize.svg" alt="Minimize">
+            <img class="win-control" src="../assets/maximize.svg" alt="Maximize" style="width: 25px; height: 25px; margin-bottom: 2px;">
+            <img class="win-control" src="../assets/close.svg" alt="Close">
+        </div>
+    </div>
+    <div class="container">
+        <div class="gen-container">
+            <div class="gen-header"><b>Milk Tea(s):</b></div>
+            <div id="gen-1" class="gen-content"></div>
+            <div id="gen-2" class="gen-content"></div>
+            <br>
+            <div class="gen-header"><b>Additive(s):</b></div>
+            <div id="gen-3" class="gen-content"></div>
+            <div id="gen-4" class="gen-content"></div>
+        </div>
+        <br>
+        <div class="star-container">
+            <img class="star" src="../assets/star-empty.png" data-index="1"/>
+            <img class="star" src="../assets/star-empty.png" data-index="2"/>
+            <img class="star" src="../assets/star-empty.png" data-index="3"/>
+            <img class="star" src="../assets/star-empty.png" data-index="4"/>
+            <img class="star" src="../assets/star-empty.png" data-index="5"/>
+        </div>
+        <br>
+        <div class="button-container">
+            <img id="save" class="save" src="../assets/save.png" alt="Save"v>
+            <div id="retry-new" class="button" onclick="location.reload()">RETRY</div>
+            <div id="back" class="button">BACK</div>
+        </div>
+        <br>
+        <div class="map">(B)oba (J)elly (P)opping</div>
+        <br>
+        <div class="map">Left-Click: Highlight / Right-Click: Remove</div>
+    </div>
+    <div style="position: absolute; margin-top: 2rem; right: 0;">
+            <div class="boba-container">
+                <div class="boba-back" style="top: 0; right: 0;"></div>
+                <div class="boba-back" style="top: 8rem; right: 8rem;"></div>
+                <div class="boba-back" style="top: 8rem; right: 0;"></div>
+                <div class="boba-back" style="top: 16rem; right: 16rem;"></div>
+                <div class="boba-back" style="top: 16rem; right: 8rem;"></div>
+                <div class="boba-back" style="top: 16rem; right: 0;"></div>
+            </div>
+    </div>
+    <script src="../scripts/gen-new.js"></script>
+    <script src="../scripts/navigation.js"></script>
+    <script src="../scripts/review.js"></script>
+    <script src="../scripts/window-controls.js"></script>
+</body>

@@ -1,7 +1,15 @@
 {
-  "dependencies": {
-    "prompts": "^2.4.2",
-    "say": "^0.16.0",
-    "terminal-text-color": "^0.0.7"
+  "name": "boba-bot",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dion Hobdy",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "electron": "^37.4.0"
   }
 }

@@ -1,0 +1,64 @@
+.control-container {
+    position: absolute;
+    right: .5rem;
+    margin-top: -1.75rem;
+}
+
+.win-control {
+    cursor: pointer;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+}
+
+.titlebar {
+  width: 101.75%;
+  height: 40px;
+  background-color: #463F3A;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: -.45rem;
+    -webkit-app-region: drag; 
+}
+
+.titlebarHeader {
+    color:#F4F3EE;
+    display: inline-block;
+    font-family: "Chiron Hei HK", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-size: 1.25rem;
+    font-style: normal;
+    margin-top: .5rem;
+    margin-left: 1rem;
+
+}
+
+/* Make common interactive elements inside the titlebar and nearby areas clickable
+     even when the titlebar is set to drag. This ensures select dropdowns, buttons,
+     inputs, and other controls receive pointer events and are not dragged. */
+.titlebar select,
+.titlebar button,
+.control-container select,
+.control-container button,
+select,
+button,
+input,
+.button,
+.gen-content {
+    -webkit-app-region: no-drag;
+}
+
+/* Ensure window control icons are clickable (not part of the draggable region) */
+.win-control {
+    -webkit-app-region: no-drag;
+    z-index: 3000;
+    position: relative;
+}
+
+/* Ensure selects and buttons render above decorative background bubbles */
+select,
+.button,
+.gen-content {
+    z-index: 2000;
+    position: relative;
+}
